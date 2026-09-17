@@ -1,4 +1,4 @@
-FROM distributions.traps.paloaltonetworks.com/agent-docker-pull/9110024049f24d2c83600065265edc01/method:9.3.0.220 AS cortex_agent
+FROM distributions.traps.paloaltonetworks.com/agent-docker-pull/aaa1c5b345734aebbb61d0bcebc41fa2/method:9.3.0.220 AS cortex_agent
 
 # 1. Base image vulnerable to Spring4Shell
 FROM tomcat:9.0.59-jdk11-openjdk-slim
@@ -34,7 +34,7 @@ COPY --from=cortex_agent /usr/share/ca-certificates/ /usr/share/ca-certificates/
 
 ENV XDR_CA_CERTS_LOCATION="/etc/ssl/certs/ca-certificates.crt" \
     XDR_INIT_ROOT_DIR="/etc/panw-init" \
-    XDR_DISTRIBUTION_ID="9110024049f24d2c83600065265edc01" \
+    XDR_DISTRIBUTION_ID="aaa1c5b345734aebbb61d0bcebc41fa2" \
     XDR_CONTAINER_MODE="embeddedcontainer" \
     XDR_DISTRIBUTION_SERVER="https://distributions.traps.paloaltonetworks.com"
 
